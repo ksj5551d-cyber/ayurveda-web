@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const FloatingLeaf = ({ className, delay }) => (
   <motion.div
@@ -34,11 +35,30 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-10 hidden md:block" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent z-10 md:hidden block" />
-        <img
-          src="/images/hero-new.png"
-          alt="Himalayan Environment"
-          className="w-full h-full object-cover opacity-90 object-center md:object-right"
-        />
+        
+        {/* Mobile Background */}
+        <div className="md:hidden block absolute inset-0">
+          <Image
+            src="/images/hero-mobile.png"
+            alt="Himalayan Ayurvedic Retreat Mobile"
+            fill
+            className="object-cover opacity-90 object-center"
+            priority
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Desktop Background */}
+        <div className="hidden md:block absolute inset-0">
+          <Image
+            src="/images/hero-new.png"
+            alt="Himalayan Ayurvedic Retreat"
+            fill
+            className="object-cover opacity-90 object-right"
+            priority
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid md:grid-cols-2 gap-12 items-center">
