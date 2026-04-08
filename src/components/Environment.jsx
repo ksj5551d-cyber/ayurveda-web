@@ -2,6 +2,27 @@
 
 import { motion } from "framer-motion";
 
+const FloatingLeaf = ({ className, delay }) => (
+  <motion.div
+    className={`absolute opacity-[0.04] pointer-events-none z-0 ${className}`}
+    animate={{ 
+      y: [0, -40, 0], 
+      rotate: [0, 15, -10, 0],
+      x: [0, 15, -15, 0]
+    }}
+    transition={{ 
+      duration: 12, 
+      repeat: Infinity, 
+      ease: "easeInOut",
+      delay: delay 
+    }}
+  >
+    <svg width="150" height="150" viewBox="0 0 24 24" fill="currentColor" className="text-white blur-[2px]">
+      <path d="M21.4,11.6C21.4,11.6 15,-1.3 2.1,3.2C2.1,3.2 -1.4,15 11.6,21.4C12.4,21.7 13.2,21.9 14,21.9C18.6,21.9 21.4,11.6 21.4,11.6Z" />
+    </svg>
+  </motion.div>
+);
+
 export default function Environment() {
   return (
     <section className="relative py-16 md:py-32 overflow-hidden">
@@ -15,7 +36,10 @@ export default function Environment() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2">
-        <div className="flex flex-col space-y-8">
+        <FloatingLeaf className="top-[10%] left-[-5%] scale-125" delay={0} />
+        <FloatingLeaf className="bottom-[10%] left-[25%] scale-75 rotate-45" delay={4} />
+        
+        <div className="flex flex-col space-y-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

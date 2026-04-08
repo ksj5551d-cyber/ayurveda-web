@@ -2,9 +2,34 @@
 
 import { motion } from "framer-motion";
 
+const FloatingLeaf = ({ className, delay }) => (
+  <motion.div
+    className={`absolute opacity-[0.03] pointer-events-none z-0 ${className}`}
+    animate={{ 
+      y: [0, -40, 0], 
+      rotate: [0, 15, -10, 0],
+      x: [0, 15, -15, 0]
+    }}
+    transition={{ 
+      duration: 12, 
+      repeat: Infinity, 
+      ease: "easeInOut",
+      delay: delay 
+    }}
+  >
+    <svg width="150" height="150" viewBox="0 0 24 24" fill="currentColor" className="text-primary blur-[2px]">
+      <path d="M21.4,11.6C21.4,11.6 15,-1.3 2.1,3.2C2.1,3.2 -1.4,15 11.6,21.4C12.4,21.7 13.2,21.9 14,21.9C18.6,21.9 21.4,11.6 21.4,11.6Z" />
+    </svg>
+  </motion.div>
+);
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-zinc-50">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-gradient-to-b from-white to-zinc-50/50">
+      <FloatingLeaf className="top-[15%] left-[5%] scale-125" delay={0} />
+      <FloatingLeaf className="top-[60%] left-[30%] scale-75 opacity-[0.02]" delay={3} />
+      <FloatingLeaf className="bottom-10 md:top-[20%] right-[10%] scale-100 -rotate-45" delay={6} />
+      
       {/* Background Image Setup */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-10 hidden md:block" />

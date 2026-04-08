@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-secondary/60">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/40 via-secondary/20 to-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,8 +50,8 @@ export default function WhyChooseUs() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-white"
+                transition={{ duration: 0.8, delay: index * 0.15, type: "spring", bounce: 0.4 }}
+                className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 flex flex-col group border border-white relative z-10"
               >
                 <div className="h-48 relative overflow-hidden">
                   <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />

@@ -1,17 +1,36 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from "framer-motion";
 
 export default function AnimatedScrollGrid({ children }) {
+  const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
   const numSections = 8;
   const totalStages = numSections + 1;
-  
+
+  useEffect(() => {
+    const checkViewport = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkViewport();
+    window.addEventListener("resize", checkViewport);
+    return () => window.removeEventListener("resize", checkViewport);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
   });
+
+  if (!isDesktop) {
+    return (
+      <div ref={containerRef} className="flex flex-col w-full bg-white">
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div ref={containerRef} className="relative w-full" style={{ position: "relative", height: `${totalStages * 100}vh` }}>
@@ -23,9 +42,6 @@ export default function AnimatedScrollGrid({ children }) {
     </div>
   );
 }
-
-import React, { useState } from "react";
-import { useMotionValueEvent } from "framer-motion";
 
 function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -66,8 +82,7 @@ function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
                 <h2 className="text-5xl md:text-7xl text-primary font-bold tracking-tight bg-white/90 px-10 py-6 rounded-full backdrop-blur-md shadow-2xl">Explore Ayurveda</h2>
               </div>
               
-              {/* Desktop layout */}
-              <div className="hidden md:block w-full h-full relative">
+              <div className="w-full h-full relative">
                 {boxData.map((box, i) => (
                   <motion.div
                     key={`box-${i}`}
@@ -85,32 +100,14 @@ function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
                   </motion.div>
                 ))}
               </div>
-              
-              {/* Mobile Fallback layout without duplicate layoutId */}
-              <div className="md:hidden flex flex-col gap-6 px-6 overflow-y-auto h-full pb-32">
-                {boxData.map((box, i) => (
-                  <motion.div
-                    key={`box-mobile-${i}`}
-                    className="relative rounded-3xl overflow-hidden aspect-video border-4 border-white shadow-xl w-full"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${box.bg})` }} />
-                    <div className="absolute inset-0 bg-primary/40 flex items-center justify-center p-6 text-center">
-                      <h3 className="font-bold text-white text-2xl drop-shadow-md">{box.title}</h3>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
           ) : (
             <motion.div
               key={`section-${activeIndex}`}
-              layoutId={typeof window !== "undefined" && window.innerWidth >= 768 ? `box-${activeIndex - 1}` : undefined}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0, borderRadius: 0 }}
-              exit={{ opacity: 0, y: -30 }}
+              layoutId={`box-${activeIndex - 1}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1, borderRadius: 0 }}
+              exit={{ opacity: 0, scale: 1.05 }}
               transition={{ duration: 0.5 }}
               className="w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center justify-center py-20 bg-white relative z-40"
             >

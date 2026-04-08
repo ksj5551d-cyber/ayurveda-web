@@ -13,7 +13,6 @@ import Newsletter from "@/components/Newsletter";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import AnimatedScrollGrid from "@/components/AnimatedScrollGrid";
-import BottomNav from "@/components/BottomNav";
 
 export default function Home() {
   return (
@@ -23,7 +22,6 @@ export default function Home() {
         <main className="flex min-h-screen flex-col w-full">
           <Hero />
           
-          {/* Animated Sticky Section */}
           <AnimatedScrollGrid>
             <WhoWeHelp />
             <ChoosePath />
@@ -40,7 +38,6 @@ export default function Home() {
           <FinalCTA />
         </main>
         <Footer />
-        <BottomNav />
       </IntroLoader>
     </>
   );

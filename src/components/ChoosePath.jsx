@@ -23,7 +23,7 @@ export default function ChoosePath() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-secondary/40 border-y border-secondary">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-secondary/10 to-secondary/40 border-y border-secondary/20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,7 +46,7 @@ export default function ChoosePath() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl transition-all flex flex-col group relative"
+              className="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-500 flex flex-col group relative"
             >
               <div className="h-64 relative overflow-hidden w-full m-0 p-0">
                 <img src={path.image} alt={path.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
