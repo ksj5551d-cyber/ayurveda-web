@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Environment() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src="/images/hero.jpg"
@@ -22,7 +22,7 @@ export default function Environment() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               Healing in the Himalayan Environment
             </h2>
             <p className="text-xl text-secondary">

@@ -32,7 +32,7 @@ const cards = [
 
 export default function WhoWeHelp() {
   return (
-    <section className="py-24 bg-secondary/80 text-primary">
+    <section className="py-16 md:py-24 bg-secondary/80 text-primary">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,13 +41,13 @@ export default function WhoWeHelp() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">Who We Help</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">Who We Help</h2>
           <p className="text-xl font-medium text-gray-800">
             People seeking serious, personalized Ayurvedic care or structured Ayurvedic learning.
           </p>
         </motion.div>
 
-        <div className="flex md:grid md:grid-cols-2 gap-8 lg:gap-10 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
+        <div className="flex md:grid md:grid-cols-2 gap-6 lg:gap-10 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
           {cards.map((card, index) => {
             const Icon = card.icon;
             return (
@@ -58,7 +58,7 @@ export default function WhoWeHelp() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 min-h-[400px] flex flex-col justify-end min-w-[300px] md:min-w-0"
+                className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 min-h-[320px] lg:min-h-[400px] flex flex-col justify-end min-w-[300px] md:min-w-0"
               >
                 {/* Background Image */}
                 <img 

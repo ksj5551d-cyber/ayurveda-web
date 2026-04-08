@@ -26,16 +26,16 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-secondary/60">
+    <section className="py-16 md:py-24 bg-secondary/60">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">Why Patients Choose AyurCare</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">Why Patients Choose AyurCare</h2>
           <p className="text-xl text-gray-700 font-medium">
             Focused, doctor-led care for those seeking serious and personalized Ayurvedic treatment.
           </p>
@@ -66,9 +66,9 @@ export default function WhyChooseUs() {
                   </div>
                 </div>
                 
-                <div className="p-8 pt-10 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">{reason.title}</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed flex-grow">{reason.desc}</p>
+                <div className="p-6 md:p-8 pt-8 md:pt-10 flex-grow flex flex-col">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 tracking-tight">{reason.title}</h3>
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed flex-grow">{reason.desc}</p>
                 </div>
               </motion.div>
             );

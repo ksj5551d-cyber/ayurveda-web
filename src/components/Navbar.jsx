@@ -90,13 +90,13 @@ export default function Navbar() {
       }`}
       onMouseLeave={() => setActiveDropdown(null)}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-2xl font-bold tracking-tight text-primary cursor-pointer flex items-center"
+            className="text-xl md:text-2xl font-bold tracking-tight text-primary cursor-pointer flex items-center"
           >
             AyurCare
           </motion.div>
@@ -107,7 +107,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="hidden md:flex items-center space-x-6 lg:space-x-8"
+          className="hidden md:flex items-center space-x-4 lg:space-x-8"
         >
           {navData.map((item, index) => (
             <div

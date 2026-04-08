@@ -23,7 +23,7 @@ export default function ChoosePath() {
   ];
 
   return (
-    <section className="py-24 bg-secondary/40 border-y border-secondary">
+    <section className="py-16 md:py-24 bg-secondary/40 border-y border-secondary">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function ChoosePath() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Choose Your Path at AyurCare</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 drop-shadow-sm">Choose Your Path at AyurCare</h2>
           <p className="text-xl text-gray-600">
             Whether you are seeking treatment or deeper learning, we offer personalized clinical guidance at every step.
           </p>
@@ -54,25 +54,25 @@ export default function ChoosePath() {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent to-transparent opacity-80" />
                 <h3 className="absolute bottom-6 left-8 text-3xl font-bold text-white z-10 drop-shadow-md">{path.title}</h3>
               </div>
-              <div className="p-8 flex flex-col flex-grow relative z-10 bg-white">
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                  {path.desc}
-                </p>
-                <div className="space-y-4 mb-10 flex-grow">
-                  {path.points.map((point, i) => (
-                    <div key={i} className="flex items-center space-x-3 text-gray-700">
-                      <div className="w-2 h-2 rounded-full bg-secondary flex-shrink-0" />
-                      <span className="font-medium text-gray-800">{point}</span>
-                    </div>
-                  ))}
+                <div className="p-6 md:p-8 flex flex-col flex-grow relative z-10 bg-white">
+                  <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
+                    {path.desc}
+                  </p>
+                  <div className="space-y-3 mb-8 flex-grow">
+                    {path.points.map((point, i) => (
+                      <div key={i} className="flex items-center space-x-3 text-gray-700">
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-secondary flex-shrink-0" />
+                        <span className="font-medium text-gray-800 text-sm md:text-base">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <Link href={path.link} className="w-full">
+                      <button className="flex items-center justify-between w-full p-4 rounded-2xl bg-zinc-50 group-hover:bg-primary group-hover:text-white transition-all text-primary font-semibold shadow-sm text-base md:text-lg">
+                        <span>Explore</span>
+                        <ArrowRight size={18} />
+                      </button>
+                  </Link>
                 </div>
-                <Link href={path.link} className="w-full">
-                    <button className="flex items-center justify-between w-full p-4 rounded-2xl bg-zinc-50 group-hover:bg-primary group-hover:text-white transition-all text-primary font-semibold shadow-sm text-lg">
-                      <span>Explore</span>
-                      <ArrowRight size={20} />
-                    </button>
-                </Link>
-              </div>
             </motion.div>
           ))}
         </div>
