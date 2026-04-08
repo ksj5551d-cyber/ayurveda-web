@@ -146,17 +146,17 @@ export default function Articles() {
 
         {/* Mobile / Tablet View (Horizontal Slider) */}
         <div className="lg:hidden">
-          <div className="flex gap-6 overflow-x-auto hide-scrollbar pb-10 -mx-6 px-6 snap-x touch-pan-y">
+          <div className="flex gap-6 overflow-x-auto hide-scrollbar pb-10 -mx-6 px-6 mobile-scroll-snap">
             {articles.map((article, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="min-w-[300px] flex-shrink-0 snap-center group"
+                className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 group"
               >
                 <div className="bg-zinc-50 rounded-[2rem] overflow-hidden border border-zinc-100 p-3 h-full">
-                  <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-5">
+                  <div className="relative rounded-2xl overflow-hidden aspect-video mb-5">
                     <img
                       src={article.image}
                       alt={article.title}
