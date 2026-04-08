@@ -38,7 +38,7 @@ export default function Doctors() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto">
+        <div className="flex md:grid md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
           {doctors.map((doctor, index) => (
             <motion.div
               key={index}
@@ -46,7 +46,7 @@ export default function Doctors() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="flex flex-col bg-zinc-800/50 rounded-3xl overflow-hidden border border-zinc-700/50 backdrop-blur-sm group"
+              className="flex flex-col bg-zinc-800/50 rounded-3xl overflow-hidden border border-zinc-700/50 backdrop-blur-sm group min-w-[300px] md:min-w-0"
             >
               <div className="h-72 overflow-hidden bg-zinc-800 relative">
                 <img

@@ -35,13 +35,13 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch mb-16">
+        <div className="flex lg:grid lg:grid-cols-3 gap-8 items-stretch mb-16 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 lg:pb-0 px-4 -mx-4 lg:px-0 lg:mx-0">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between items-start"
+            className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between items-start min-w-[300px] lg:min-w-0"
           >
             <div>
               <div className="flex text-primary mb-6">
@@ -67,7 +67,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-1 relative bg-zinc-900 rounded-3xl overflow-hidden group min-h-[300px]"
+            className="lg:col-span-1 relative bg-zinc-900 rounded-3xl overflow-hidden group min-h-[300px] min-w-[300px] lg:min-w-0"
           >
             <img
               src="/images/help2.jpg"
@@ -91,7 +91,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between items-start"
+            className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col justify-between items-start min-w-[300px] lg:min-w-0"
           >
             <div>
               <div className="flex text-primary mb-6">

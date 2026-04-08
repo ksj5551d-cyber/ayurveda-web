@@ -47,7 +47,7 @@ export default function WhoWeHelp() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
+        <div className="flex md:grid md:grid-cols-2 gap-8 lg:gap-10 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
           {cards.map((card, index) => {
             const Icon = card.icon;
             return (
@@ -58,7 +58,7 @@ export default function WhoWeHelp() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 min-h-[400px] flex flex-col justify-end"
+                className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 min-h-[400px] flex flex-col justify-end min-w-[300px] md:min-w-0"
               >
                 {/* Background Image */}
                 <img 

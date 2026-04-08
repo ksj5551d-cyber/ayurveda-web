@@ -117,9 +117,11 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-primary ${
-                  isScrolled || activeDropdown !== null ? "text-gray-700" : "text-gray-800"
-                } ${activeDropdown === index ? "text-primary" : ""}`}
+                className={`flex items-center gap-1.5 text-sm font-bold transition-all px-3 py-2 rounded-lg ${
+                  isScrolled || activeDropdown !== null 
+                    ? "text-primary hover:bg-secondary/40" 
+                    : "text-primary hover:bg-secondary/20"
+                } ${activeDropdown === index ? "bg-secondary/40 text-primary" : ""}`}
               >
                 {item.name}
                 {item.dropdown && (
@@ -165,69 +167,24 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm ml-2">
-            Start Consultation
-          </button>
         </motion.div>
 
-        {/* Mobile Toggle */}
+        {/* Action Button - Desktop Only */}
+        <div className="hidden md:flex items-center">
+           <button className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm">
+            Start Consultation
+          </button>
+        </div>
+
+        {/* Action Button - Mobile Only (Simplified) */}
         <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 transition-colors ${
-              isScrolled || activeDropdown !== null ? "text-gray-800" : "text-gray-800"
-            }`}
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+           <button className="text-primary font-bold text-sm px-4 py-2 bg-primary/5 rounded-full">
+            Consult
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white shadow-xl border-t border-gray-100 overflow-hidden w-full absolute top-full left-0 origin-top"
-          >
-            <div className="flex flex-col py-4 px-6 max-h-[85vh] overflow-y-auto">
-              {navData.map((item) => (
-                <div key={item.name} className="py-3 border-b border-gray-50 last:border-0">
-                  <div className="text-gray-800 font-semibold text-lg mb-2">
-                    {item.name}
-                  </div>
-                  {item.dropdown && (
-                    <div className="pl-4 border-l-2 border-emerald-100 space-y-4 mt-3 py-1">
-                      {item.dropdown.map((dropItem) => (
-                        <Link
-                          key={dropItem.title}
-                          href={dropItem.href}
-                          className="block group"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          <div className="text-sm font-semibold text-gray-800 group-hover:text-primary mb-0.5">
-                            {dropItem.title}
-                          </div>
-                          <div className="text-xs text-gray-500">
-                            {dropItem.desc}
-                          </div>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-              <div className="pt-6 pb-2">
-                <button className="bg-primary text-white px-6 py-3.5 rounded-xl font-semibold w-full shadow-md shadow-primary/20 active:scale-95 transition-all">
-                  Start Consultation
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Note: Mobile Menu moved to BottomNav for better mobile-native feel */}
     </nav>
   );
 }

@@ -26,9 +26,9 @@ export default function Articles() {
   ];
 
   return (
-    <section className="py-24 bg-secondary">
+    <section className="md:min-h-screen py-16 md:py-32 bg-secondary flex flex-col justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -36,8 +36,8 @@ export default function Articles() {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Learn from Our Articles</h2>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Learn from Our Articles</h2>
+            <p className="text-lg md:text-xl text-gray-600">
               Insights directly from our clinical practice and ongoing patient cases.
             </p>
           </motion.div>
@@ -49,14 +49,14 @@ export default function Articles() {
             transition={{ duration: 0.6 }}
             className="mt-6 md:mt-0"
           >
-            <button className="flex items-center space-x-2 text-primary font-semibold text-lg hover:text-primary/80 transition-colors">
+            <button className="flex items-center space-x-2 text-primary font-semibold text-base md:text-lg hover:text-primary/80 transition-colors">
               <span>View All Articles</span>
               <ArrowRight size={20} />
             </button>
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="flex md:grid md:grid-cols-3 gap-8 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0 snap-x touch-pan-y">
           {articles.map((article, index) => (
             <motion.div
               key={index}
@@ -64,7 +64,7 @@ export default function Articles() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer min-w-[260px] md:min-w-0 flex-shrink-0 snap-center"
             >
               <div className="relative rounded-3xl overflow-hidden mb-6 aspect-video">
                 <img
@@ -80,11 +80,13 @@ export default function Articles() {
                 <Calendar size={14} />
                 <span>{article.date}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors leading-tight">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 group-hover:text-primary transition-colors leading-tight">
                 {article.title}
               </h3>
             </motion.div>
           ))}
+          {/* Spacer for mobile scroll padding */}
+          <div className="md:hidden flex-shrink-0 w-4" />
         </div>
       </div>
     </section>

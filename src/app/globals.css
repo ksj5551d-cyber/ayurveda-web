@@ -28,4 +28,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* Custom Scroll Utilities for Mobile */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-scroll-snap {
+  scroll-snap-type: x mandatory;
+}
+
+.mobile-scroll-snap > * {
+  scroll-snap-align: center;
 }

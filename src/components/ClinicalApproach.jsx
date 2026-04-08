@@ -31,7 +31,7 @@ export default function ClinicalApproach() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
@@ -75,7 +75,7 @@ export default function ClinicalApproach() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
-            className="w-full h-full min-h-[500px] rounded-[3rem] overflow-hidden shadow-2xl relative order-first md:order-last"
+            className="w-full h-[400px] md:h-full md:min-h-[600px] rounded-[3rem] overflow-hidden shadow-2xl relative order-first md:order-last"
           >
             <img 
               src="/images/clinic.jpg" 

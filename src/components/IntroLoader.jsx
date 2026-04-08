@@ -5,16 +5,23 @@ import { useEffect, useState } from "react";
 
 export default function IntroLoader({ children }) {
   const [loading, setLoading] = useState(true);
+  const [isFirstVisit, setIsFirstVisit] = useState(false);
 
   useEffect(() => {
-    // Hide loader after 2.5 seconds
-    const timer = setTimeout(() => {
+    const hasSeen = localStorage.getItem("hasSeenIntro");
+    if (hasSeen) {
       setLoading(false);
-    }, 2500);
-    return () => clearTimeout(timer);
+    } else {
+      // Set the flag immediately to ensure it only plays once even if interrupted
+      localStorage.setItem("hasSeenIntro", "true");
+      setIsFirstVisit(true);
+    }
   }, []);
 
   if (!loading) return <>{children}</>;
+  
+  // Show a solid color background while checking to avoid white flash
+  if (!isFirstVisit && loading) return <div className="fixed inset-0 bg-primary z-[100]" />;
 
   return (
     <motion.div

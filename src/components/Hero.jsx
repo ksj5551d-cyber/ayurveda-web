@@ -7,11 +7,12 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-zinc-50">
       {/* Background Image Setup */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent z-10 hidden md:block" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent z-10 md:hidden block" />
         <img
-          src="/images/hero.jpg"
+          src="/images/hero-new.png"
           alt="Himalayan Environment"
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover opacity-90 object-center md:object-right"
         />
       </div>
 
