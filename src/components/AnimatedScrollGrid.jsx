@@ -60,10 +60,10 @@ function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
               className="relative w-full h-full max-w-7xl mx-auto py-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.2 } }}
+              exit={{ opacity: 0, transition: { duration: 0.1 } }}
             >
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-50">
-                <h2 className="text-5xl md:text-7xl text-primary font-bold tracking-tight bg-white/90 px-10 py-6 rounded-full backdrop-blur-md shadow-2xl">Scroll to Explore</h2>
+                <h2 className="text-5xl md:text-7xl text-primary font-bold tracking-tight bg-white/90 px-10 py-6 rounded-full backdrop-blur-md shadow-2xl">Explore Ayurveda</h2>
               </div>
               
               {/* Desktop layout */}
