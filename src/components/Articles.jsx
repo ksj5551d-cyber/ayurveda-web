@@ -34,7 +34,7 @@ export default function Articles() {
   const otherArticles = articles.filter(a => !a.featured);
 
   return (
-    <section className="bg-white py-24 md:py-32 overflow-hidden">
+    <section className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
@@ -153,31 +153,31 @@ export default function Articles() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="min-w-[280px] sm:min-w-[320px] flex-shrink-0 group"
+                className="w-[85vw] max-w-[280px] flex-shrink-0 group"
               >
-                <div className="bg-zinc-50 rounded-[2rem] overflow-hidden border border-zinc-100 p-3 h-full">
-                  <div className="relative rounded-2xl overflow-hidden aspect-video mb-5">
+                <div className="bg-zinc-50 rounded-[1.5rem] overflow-hidden border border-zinc-100 p-2.5 h-full">
+                  <div className="relative rounded-xl overflow-hidden aspect-video mb-4">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-3 left-3 px-3 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-wider">
+                    <div className="absolute top-2 left-2 px-2.5 py-1 bg-white/20 backdrop-blur-md rounded-full text-[9px] font-bold text-white uppercase tracking-wider">
                       {article.category}
                     </div>
                   </div>
-                  <div className="px-3 pb-4">
-                    <div className="flex items-center gap-4 text-gray-400 text-[10px] font-medium mb-3">
+                  <div className="px-2 pb-2">
+                    <div className="flex items-center gap-3 text-gray-400 text-[10px] font-medium mb-2.5">
                       <span className="flex items-center gap-1"><Calendar size={10} /> {article.date}</span>
                       <span className="flex items-center gap-1"><Clock size={10} /> {article.readTime}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-primary mb-5 leading-tight">
+                    <h3 className="text-lg font-bold text-primary mb-4 leading-tight line-clamp-2">
                       {article.title}
                     </h3>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mt-auto">
                       <span className="text-xs font-bold text-secondary">Read Full Wisdom</span>
-                      <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
-                        <ArrowUpRight size={16} />
+                      <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white">
+                        <ArrowUpRight size={14} />
                       </div>
                     </div>
                   </div>

@@ -23,7 +23,7 @@ export default function ChoosePath() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-secondary/10 to-secondary/40 border-y border-secondary/20 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white via-secondary/10 to-secondary/40 border-y border-secondary/20 relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

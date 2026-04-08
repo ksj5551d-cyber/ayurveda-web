@@ -26,7 +26,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/40 via-secondary/20 to-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/40 via-secondary/20 to-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

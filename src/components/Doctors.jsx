@@ -20,7 +20,7 @@ export default function Doctors() {
   ];
 
   return (
-    <section className="py-24 bg-zinc-900 text-white overflow-hidden relative">
+    <section className="py-24 bg-zinc-900 text-white relative">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       

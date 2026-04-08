@@ -32,7 +32,7 @@ const cards = [
 
 export default function WhoWeHelp() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-secondary/30 relative overflow-hidden text-primary">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-secondary/30 relative text-primary">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
