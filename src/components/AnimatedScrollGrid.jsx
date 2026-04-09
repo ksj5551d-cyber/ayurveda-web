@@ -26,7 +26,7 @@ export default function AnimatedScrollGrid({ children }) {
 
   if (!isDesktop) {
     return (
-      <div ref={containerRef} className="flex flex-col w-full bg-white">
+      <div ref={containerRef} className="flex flex-col w-full bg-white overflow-x-hidden max-w-full">
         {children}
       </div>
     );
