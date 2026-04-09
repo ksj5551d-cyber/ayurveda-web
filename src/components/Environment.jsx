@@ -26,7 +26,7 @@ const FloatingLeaf = ({ className, delay }) => (
 export default function Environment() {
   return (
     <section className="relative py-16 md:py-32">
-      <div className="absolute inset-0 z-0 h-screen ">
+      <div className="absolute inset-0 z-0">
         <img
           src="/images/hero.jpg"
           alt="Himalayan Environment"
