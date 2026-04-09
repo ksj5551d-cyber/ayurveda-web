@@ -8,12 +8,12 @@ export default function IntroLoader({ children }) {
   const [isFirstVisit, setIsFirstVisit] = useState(false);
 
   useEffect(() => {
-    const hasSeen = localStorage.getItem("hasSeenIntro");
+    const hasSeen = sessionStorage.getItem("hasSeenIntro");
     if (hasSeen) {
       setLoading(false);
     } else {
       // Set the flag immediately to ensure it only plays once even if interrupted
-      localStorage.setItem("hasSeenIntro", "true");
+      sessionStorage.setItem("hasSeenIntro", "true");
       setIsFirstVisit(true);
     }
   }, []);
