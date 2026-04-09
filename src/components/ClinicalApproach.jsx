@@ -26,14 +26,14 @@ export default function ClinicalApproach() {
   ];
 
   return (
-    <section className="py-16 md:py-32 bg-gradient-to-b from-white to-secondary/30 relative">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="w-full py-10 md:py-14 bg-gradient-to-b from-white to-secondary/30">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 mt-23">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 font-display">Our Clinical Approach</h2>
           <p className="text-xl text-gray-600">
@@ -41,7 +41,7 @@ export default function ClinicalApproach() {
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="flex flex-col space-y-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
@@ -52,18 +52,18 @@ export default function ClinicalApproach() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-lg border border-gray-100 flex items-start space-x-6 group transition-all"
+                  className="bg-white rounded-[1.5rem] p-4 md:p-5 shadow-sm hover:shadow-lg border border-gray-100 flex items-start space-x-4 group transition-all"
                 >
                   <div className="w-16 h-16 bg-secondary/40 text-primary rounded-full flex flex-shrink-0 flex-col items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                     <span className="text-sm font-bold opacity-60">Step</span>
                     <span className="text-xl font-black">{step.num}</span>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 flex items-center gap-3">
                       <Icon size={24} className="text-primary opacity-80" />
                       {step.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-lg">{step.desc}</p>
+                    <p className="text-gray-600 leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -75,7 +75,7 @@ export default function ClinicalApproach() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.7 }}
-            className="w-full h-[400px] md:h-full md:min-h-[600px] rounded-[3rem] overflow-hidden shadow-2xl relative order-first md:order-last"
+            className="w-full rounded-[2rem] overflow-hidden shadow-2xl relative order-first md:order-last" style={{ minHeight: '340px' }}
           >
             <img 
               src="/images/clinic.jpg" 

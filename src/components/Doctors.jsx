@@ -38,7 +38,7 @@ export default function Doctors() {
           </p>
         </motion.div>
 
-        <div className="flex md:grid md:grid-cols-2 gap-12 mb-16 max-w-5xl mx-auto overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
+        <div className="flex md:grid md:grid-cols-2 gap-12 mb-16 overflow-x-auto hide-scrollbar mobile-scroll-snap pb-8 md:pb-0 px-4 -mx-4 md:px-0 md:mx-0">
           {doctors.map((doctor, index) => (
             <motion.div
               key={index}

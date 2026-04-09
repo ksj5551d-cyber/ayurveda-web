@@ -26,16 +26,16 @@ const FloatingLeaf = ({ className, delay }) => (
 export default function Environment() {
   return (
     <section className="relative py-16 md:py-32">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 min-h-screen ">
         <img
           src="/images/hero.jpg"
           alt="Himalayan Environment"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/95 via-zinc-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/95 via-zinc-900/70 to-zinc-900/40" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 mt-50">
         <FloatingLeaf className="top-[10%] left-[-5%] scale-125" delay={0} />
         <FloatingLeaf className="bottom-[10%] left-[25%] scale-75 rotate-45" delay={4} />
         
