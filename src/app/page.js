@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <IntroLoader>
         <Navbar />
-        <main className="flex min-h-screen flex-col w-full overflow-x-hidden">
+        <main className="flex min-h-screen flex-col w-full">
           <Hero />
           
           <AnimatedScrollGrid>

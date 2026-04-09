@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${interFont.variable} h-full antialiased overflow-x-hidden`}
+      className={`${interFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden max-w-[100vw] pb-24 md:pb-0">
+      <body className="min-h-full flex flex-col pb-24 md:pb-0">
         {children}
         <BottomNav />
       </body>
