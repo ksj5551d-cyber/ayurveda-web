@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${interFont.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden max-w-[100vw]">
+      <body className="min-h-full flex flex-col overflow-x-hidden max-w-[100vw] pb-24 md:pb-0">
         {children}
         <BottomNav />
       </body>

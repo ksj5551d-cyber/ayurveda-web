@@ -68,12 +68,12 @@ function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
 
   return (
     <>
-      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center bg-zinc-50 border-t border-gray-200">
+      <div className="sticky top-0 left-0 w-full h-screen overflow-hidden bg-zinc-50 border-t border-gray-200">
         <AnimatePresence mode="wait">
           {activeIndex === 0 ? (
             <motion.div
               key="grid-view"
-              className="relative w-full h-full max-w-7xl mx-auto py-20"
+              className="absolute inset-0 w-full h-full max-w-7xl mx-auto py-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.1 } }}
@@ -109,9 +109,9 @@ function ScrollGridRenderer({ scrollYProgress, totalStages, childrenArray }) {
               animate={{ opacity: 1, scale: 1, borderRadius: 0 }}
               exit={{ opacity: 0, scale: 1.05 }}
               transition={{ duration: 0.5 }}
-              className="w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center justify-center py-20 bg-white relative z-40"
+              className="absolute inset-0 w-full h-full overflow-y-auto custom-scrollbar flex flex-col items-center justify-center py-20 bg-white z-40"
             >
-              <div className="w-full h-full flex flex-col">
+              <div className="w-full h-full flex flex-col relative max-w-7xl mx-auto pt-10">
                 {elements[activeIndex - 1]}
               </div>
             </motion.div>
