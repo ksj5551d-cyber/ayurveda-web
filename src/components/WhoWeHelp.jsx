@@ -56,7 +56,6 @@ export default function WhoWeHelp() {
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: index * 0.15, type: "spring", bounce: 0.4 }}
                 whileHover={{ y: -10 }}
                 className="group relative rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-primary/20 transition-shadow duration-500 min-h-[320px] lg:min-h-[400px] flex flex-col justify-end min-w-[300px] md:min-w-0 z-10"
